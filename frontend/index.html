@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!-- 
+  ¿Qué es?
+  Declaración del tipo de documento HTML5 e idioma de la página.
+  ¿De qué se encarga?
+  Indica al navegador que use el estándar moderno HTML5 y que el contenido principal está en español.
+-->
+<html lang="es">
+<head>
+  <!-- Juego de caracteres UTF-8: permite tildes, signos de puntuación y caracteres en español -->
+  <meta charset="UTF-8">
+
+  <!-- Viewport: fundamental para diseño responsive. Asegura que la escala se adapte al ancho de pantalla del móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AguaYa | Abastecimiento de Agua en Aguachica</title>
+  
+  <!-- 
+    ENLACES A HOJAS DE ESTILO EXTERNAS (Modularización CSS)
+    ¿De qué se encarga cada una?
+    1. reset.css: Elimina márgenes y comportamientos inconsistentes entre navegadores.
+    2. variables.css: Almacena colores de marca, tipografías y espaciados estándar.
+    3. global.css: Define fuentes globales, etiquetas base y utilidades.
+    4. layout.css: Controla la estructura general, contenedores y cuadrículas (grid).
+    5. components.css: Estiliza elementos interactivos (botones, tarjetas, barra superior).
+    6. responsive.css: Reglas para adaptar la apariencia en pantallas móviles y tablets.
+  -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. BARRA DE NAVEGACIÓN (Navbar)
+       ¿Qué es? Encabezado fijo o superior de la página.
+       ¿De qué se encarga? Permite al usuario identificar la marca, navegar por las
+       secciones clave mediante enlaces ancla (#) y tener acceso inmediato al pedido de agua.
+       ========================================================================== -->
+  <header class="navbar" id="inicio">
+    <div class="container navbar__container">
+      
+      <!-- Logotipo de la marca con enlace para volver al inicio -->
+      <a href="#inicio" class="navbar__logo">
+        <span class="navbar__logo-icon">💧</span> AguaYa
+      </a>
+
+      <!-- Menú de navegación anclado a las distintas secciones de la misma página -->
+      <nav class="navbar__menu">
+        <a href="#como-funciona" class="navbar__link">Cómo funciona</a>
+        <a href="#servicios" class="navbar__link">Servicios</a>
+        <a href="#conductores" class="navbar__link">Conductores</a>
+        <a href="#cobertura" class="navbar__link">Cobertura</a>
+      </nav>
+
+      <!-- Botón de llamada a la acción (CTA) directo a WhatsApp con mensaje precargado -->
+      <button type="button" class="btn btn--primary navbar__cta" data-wa-action="request_service">
+        Pedir Agua Ahora
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         2. SECCIÓN HERO (Encabezado Principal)
+         ¿Qué es? La primera pantalla visible al entrar a la web.
+         ¿De qué se encarga? Captar la atención en menos de 5 segundos, comunicar el
+         propósito de AguaYa y ofrecer las acciones prioritarias (pedir agua o unirse como conductor).
+         ========================================================================== -->
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          
+          <!-- Insignia de contexto local para generar cercanía y confianza en Aguachica -->
+          <span class="badge">Servicio en Aguachica, Cesar</span>
+          
+          <!-- Propuesta de valor principal -->
+          <h1 class="hero__title">Agua potable en tu puerta cuando más la necesitas</h1>
+          
+          <p class="hero__description">
+            Conectamos tu pedido de agua con carrotanques de confianza. Rápido, seguro y coordinado directo a tu casa o negocio.
+          </p>
+
+          <!-- Acciones principales: clientes por WhatsApp y conductores -->
+          <div class="hero__actions">
+            <button type="button" class="btn btn--primary btn--large" data-wa-action="request_service">
+              Solicitar por WhatsApp
+            </button>
+            <a href="#conductores" class="btn btn--secondary btn--large">
+              Soy conductor
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. CÓMO FUNCIONA
+         ¿Qué es? Guía visual del proceso del servicio.
+         ¿De qué se encarga? Reducir la incertidumbre del usuario mostrando que
+         el servicio se solicita y recibe en solo 3 pasos directos.
+         ========================================================================== -->
+    <section class="section how-it-works" id="como-funciona">
+      <div class="container">
+        <h2 class="section__title">¿Cómo funciona AguaYa?</h2>
+        <p class="section__subtitle">Pide tu abastecimiento de agua en tres simples pasos</p>
+        
+        <div class="grid grid--3">
+          <!-- Paso 1: Información inicial del cliente -->
+          <article class="card-step">
+            <div class="card-step__number">1</div>
+            <h3 class="card-step__title">Indica tu necesidad</h3>
+            <p class="card-step__text">Dinos tu barrio en Aguachica y si requieres llenar tanque aéreo, subterráneo o alberca.</p>
+          </article>
+
+          <!-- Paso 2: Intermediación y despacho -->
+          <article class="card-step">
+            <div class="card-step__number">2</div>
+            <h3 class="card-step__title">Asignamos tu carrotanque</h3>
+            <p class="card-step__text">Coordinamos con el conductor disponible más cercano para garantizarte entrega rápida.</p>
+          </article>
+
+          <!-- Paso 3: Entrega y pago -->
+          <article class="card-step">
+            <div class="card-step__number">3</div>
+            <h3 class="card-step__title">Recibe tu agua</h3>
+            <p class="card-step__text">El conductor realiza la descarga en tu punto y cancelas el servicio acordado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. SERVICIOS
+         ¿Qué es? Catálogo o desglose de las modalidades de abastecimiento.
+         ¿De qué se encarga? Clarificar que el servicio atiende tanto necesidades
+         hogareñas comunes como requerimientos de mayor volumen o contingencias.
+         ========================================================================== -->
+    <section class="section section--alt services" id="servicios">
+      <div class="container">
+        <h2 class="section__title">Nuestros Servicios</h2>
+        <p class="section__subtitle">Soluciones para emergencias y abastecimiento frecuente</p>
+
+        <div class="grid grid--3">
+          <!-- Servicio 1: Casas / Hogares -->
+          <div class="card-service">
+            <div class="card-service__icon">🏠</div>
+            <h3 class="card-service__title">Abastecimiento Residencial</h3>
+            <p class="card-service__text">Llenado de tanques domésticos y albercas familiares en cualquier barrio del municipio.</p>
+          </div>
+
+          <!-- Servicio 2: Empresas / Negocios -->
+          <div class="card-service">
+            <div class="card-service__icon">🏢</div>
+            <h3 class="card-service__title">Comercio e Industria</h3>
+            <p class="card-service__text">Suministro de alto volumen para hoteles, restaurantes, lavaderos y obras de construcción.</p>
+          </div>
+
+          <!-- Servicio 3: Contingencias por suspensión de acueducto -->
+          <div class="card-service">
+            <div class="card-service__icon">🚨</div>
+            <h3 class="card-service__title">Atención por Racionamiento</h3>
+            <p class="card-service__text">Prioridad de despacho programado para sectores con suspensión prolongada del acueducto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. SECCIÓN PARA CONDUCTORES
+         ¿Qué es? Bloque de captación de oferta (carrotanqueros).
+         ¿De qué se encarga? Reclutar conductores para expandir la red de servicio
+         y asegurar disponibilidad de viajes en Aguachica.
+         ========================================================================== -->
+    <section class="section drivers" id="conductores">
+      <div class="container drivers__container">
+        <div class="drivers__content">
+          <h2 class="section__title section__title--left">¿Tienes un carrotanque? Trabaja con AguaYa</h2>
+          <p class="drivers__text">
+            Forma parte de nuestra red en Aguachica. Optimiza tus viajes diarios, recibe clientes directamente y aumenta tus ingresos.
+          </p>
+          <!-- Botón para conductores con ID para enlace dinámico -->
+          <button type="button" class="btn btn--primary" data-wa-action="driver_register">
+            Registrarme como conductor
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. COBERTURA LOCAL
+         ¿Qué es? Información sobre el radio de operación geográfica.
+         ¿De qué se encarga? Informar a los vecinos de Aguachica que el servicio
+         cubre toda la zona y anticipar la gestión de pedidos ante cortes programados.
+         ========================================================================== -->
+    <section class="section section--alt coverage" id="cobertura">
+      <div class="container text-center">
+        <h2 class="section__title">Cobertura en Aguachica</h2>
+        <p class="section__subtitle">Llegamos a los diferentes sectores del casco urbano y zonas periurbanas</p>
+        <p class="coverage__info">
+          Atención y coordinación de lunes a domingo. Si tienes racionamiento programado en tu barrio, agenda con tiempo tu pedido.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       7. PIE DE PÁGINA (Footer)
+       ¿Qué es? El cierre inferior de la plataforma.
+       ¿De qué se encarga? Proporcionar enlaces rápidos de navegación, datos de contacto
+       directo y los créditos legales de la plataforma.
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer__container">
+      
+      <!-- Identidad y resumen -->
+      <div class="footer__brand">
+        <h3>💧 AguaYa</h3>
+        <p>Conectando soluciones de agua potable en Aguachica, Cesar.</p>
+      </div>
+
+      <!-- Accesos rápidos secundarios -->
+      <div class="footer__links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#conductores">Conductores</a></li>
+        </ul>
+      </div>
+
+      <!-- Canales de contacto -->
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <p>WhatsApp: +57 318 333 4914</p>
+        <p>Aguachica, Cesar - Colombia</p>
+      </div>
+
+    </div>
+    
+    <!-- Franja de derechos de autor -->
+    <div class="footer__bottom">
+      <p>&copy; 2026 AguaYa. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script type="module" src="js/modules/home.js"></script>
+</body>
+</html>
