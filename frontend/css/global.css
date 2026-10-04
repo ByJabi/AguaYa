@@ -1,0 +1,62 @@
+/* ==========================================================================
+   ESTILOS GLOBALES - AguaYa
+   ¿Qué es?
+   Reglas de estilo de alto nivel aplicadas a todo el documento HTML.
+   
+   ¿De qué se encarga?
+   Define la tipografía por defecto, el interlineado, los colores base de lectura,
+   los encabezados (h1, h2, h3, h4) y clases de utilidad reutilizables.
+   
+   ¿Por qué se hace así?
+   Asegura coherencia tipográfica en todas las páginas sin repetir reglas en
+   múltiples selectores. Consume las variables creadas en variables.css.
+   ========================================================================== */
+
+/* 
+   Cuerpo principal de la web:
+   ¿De qué se encarga? Establece la fuente del sistema, tamaño base (16px), 
+   altura de línea óptima para lectura y colores de fondo y texto por defecto.
+*/
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-light);
+}
+
+/* 
+   Encabezados (Títulos y Subtítulos):
+   ¿De qué se encarga? Unifica el peso de la letra y reduce el interlineado 
+   para evitar que títulos largos se vean demasiado separados entre líneas.
+*/
+h1, h2, h3, h4 {
+  color: var(--color-text-main);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* 
+   Clase de utilidad: Alineación centrada
+   ¿De qué se encarga? Permite centrar textos o bloques cuando una sección lo requiere.
+*/
+.text-center {
+  text-align: center;
+}
+
+/* 
+   Componente visual: Insignia de contexto local (.badge)
+   ¿Qué es? La pequeña pastilla de color situada sobre el título principal en el Hero.
+   ¿De qué se encarga? Resalta visualmente que el servicio opera en Aguachica, Cesar,
+   creando confianza y pertenencia local de inmediato.
+*/
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-accent-light);
+  color: var(--color-primary-hover);
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}

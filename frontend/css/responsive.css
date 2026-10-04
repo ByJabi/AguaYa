@@ -1,0 +1,120 @@
+/* ==========================================================================
+   DISEÑO RESPONSIVO (Media Queries) - AguaYa
+   ¿Qué es?
+   Reglas condicionales (@media) que reorganizan los elementos según el ancho
+   de la pantalla del dispositivo.
+   
+   ¿De qué se encarga?
+   1. En celulares y tablets: transforma las cuadrículas de 3 columnas a 1 sola.
+   2. Ajusta tamaños de fuente para que los títulos no ocupen toda la pantalla.
+   3. Reorganiza la barra de navegación y el pie de página para lectura vertical.
+   
+   ¿Por qué se hace así?
+   Garantiza que la experiencia en smartphones sea tan fluida y cómoda como
+   la de una aplicación móvil instalada.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   PANTALLAS MEDIANAS Y TABLETS (Menos de 900px de ancho)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  /* 
+     Cuadrícula adaptable:
+     Pasa de 3 columnas a 2 columnas para no apretar las tarjetas.
+  */
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 
+     Pie de página:
+     Pasa de 3 columnas horizontales a una distribución más compacta.
+  */
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .footer__brand {
+    grid-column: span 2;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TELÉFONOS MÓVILES (Menos de 640px de ancho)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* Reducción de espaciados de sección para aprovechar mejor la pantalla pequeña */
+  .section {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  /* Ajuste de escala tipográfica para títulos en móviles */
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .section__title {
+    font-size: 1.6rem;
+  }
+
+  .hero__description,
+  .section__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  /* 
+     Barra de navegación móvil:
+     Ocultamos temporalmente los enlaces secundarios para dar prioridad 
+     absoluta al logo y al botón de pedir agua directo.
+  */
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__cta {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+  }
+
+  /* 
+     Botones del Hero:
+     Se estiran al 100% del ancho para facilitar el toque con el pulgar.
+  */
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  /* 
+     Cuadrícula en celulares:
+     Pasa a 1 sola columna vertical (tarjeta sobre tarjeta).
+  */
+  .grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sección de conductores en móviles: texto centrado y botón expandido */
+  .drivers__container {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .section__title--left {
+    text-align: center;
+  }
+
+  .drivers__container .btn {
+    width: 100%;
+  }
+
+  /* Pie de página en móviles: 1 columna vertical centrada */
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

@@ -1,0 +1,337 @@
+/* ==========================================================================
+   COMPONENTES DE LA INTERFAZ - AguaYa
+   ¿Qué es?
+   El catálogo de piezas visuales e interactivas de la aplicación (UI Components).
+   
+   ¿De qué se encarga?
+   Estiliza los botones (.btn), la barra de navegación (.navbar), el encabezado (.hero),
+   las tarjetas de pasos (.card-step), las tarjetas de servicios (.card-service),
+   el bloque de conductores y el pie de página (.footer).
+   
+   ¿Por qué se hace así?
+   Sigue la metodología de diseño modular (BEM-like). Cada componente es independiente,
+   lo que facilita reutilizar un botón o una tarjeta en cualquier otra página del sistema.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BOTONES (.btn)
+   ¿De qué se encarga? Da formato a los enlaces y botones clicables, controlando
+   márgenes internos, bordes redondeados y transiciones al pasar el cursor.
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+/* Botón primario: Conexión principal hacia WhatsApp y acciones destacadas */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Botón secundario: Contorno sutil para acciones alternas (ej. "Soy conductor") */
+.btn--secondary {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-2px);
+}
+
+/* Modificador de tamaño grande para llamadas a la acción en la sección Hero */
+.btn--large {
+  padding: 0.9rem 2rem;
+  font-size: var(--font-size-lg);
+}
+
+
+/* --------------------------------------------------------------------------
+   2. BARRA DE NAVEGACIÓN (.navbar)
+   ¿De qué se encarga? Mantiene la cabecera limpia, fija en la parte superior,
+   con logo a la izquierda, menú centrado y botón de acción a la derecha.
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegura que la barra quede por encima del contenido al hacer scroll */
+  padding: var(--spacing-sm) 0;
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.navbar__menu {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.navbar__link {
+  color: var(--color-text-main);
+  font-weight: 500;
+  transition: var(--transition-normal);
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+}
+
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN HERO (.hero)
+   ¿Qué es?
+   El encabezado de impacto visual inicial.
+   
+   ¿De qué se encarga?
+   Centra matemática y visualmente todos los textos, la insignia y los botones.
+   -------------------------------------------------------------------------- */
+.hero {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+  width: 100%;
+}
+
+/* 
+   Contenedor interno del Hero:
+   ¿De qué se encarga? Usa flexbox centrado para que todo el bloque hijo
+   quede matemáticamente en el medio de la pantalla sin desviaciones.
+*/
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+   Bloque de contenido del Hero:
+   ¿De qué se encarga? Limita el ancho de lectura a 800px para que las líneas
+   no sean difíciles de leer y centra explícitamente textos y elementos internos.
+*/
+.hero__content {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra la insignia y los botones en el eje horizontal */
+}
+
+.hero__title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-main);
+  text-align: center;
+}
+
+.hero__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* 
+   Contenedor de botones de acción:
+   ¿De qué se encarga? Centra los botones de WhatsApp y Conductor lado a lado.
+*/
+.hero__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. TARJETAS DE PASOS (.card-step)
+   ¿De qué se encarga? Estiliza los 3 pasos de "¿Cómo funciona?" con un círculo
+   numérico distintivo arriba de cada tarjeta.
+   -------------------------------------------------------------------------- */
+.card-step {
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.card-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-step__number {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--spacing-md);
+  background-color: var(--color-accent-light);
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-step__title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-step__text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. TARJETAS DE SERVICIOS (.card-service)
+   ¿De qué se encarga? Muestra las opciones de abastecimiento (residencial,
+   comercio, racionamiento) con ícono llamativo y fondo blanco limpio.
+   -------------------------------------------------------------------------- */
+.card-service {
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.card-service:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.card-service__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.card-service__title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-service__text {
+  color: var(--color-text-muted);
+}
+
+
+/* --------------------------------------------------------------------------
+   6. SECCIÓN DE CONDUCTORES (.drivers)
+   ¿De qué se encarga? Contenedor destacado con borde azul suave e invitación
+   clara para captar dueños de carrotanques.
+   -------------------------------------------------------------------------- */
+.drivers__container {
+  background-color: #f0fdf4; /* Tono verde muy suave que transmite oportunidad de ingresos */
+  border: 1px solid #bbf7d0;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.drivers__content {
+  max-width: 600px;
+}
+
+.drivers__text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+
+/* --------------------------------------------------------------------------
+   7. COBERTURA (.coverage)
+   ¿De qué se encarga? Espacio de texto informativo sobre las zonas de Aguachica.
+   -------------------------------------------------------------------------- */
+.coverage__info {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: var(--spacing-md) auto 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   8. PIE DE PÁGINA (.footer)
+   ¿De qué se encarga? Fondo oscuro elegante para cerrar la página, con enlaces
+   de navegación y datos de contacto directo.
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: #0f172a; /* Azul noche profundo para contraste de pie */
+  color: #94a3b8;
+  padding-top: var(--spacing-2xl);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.footer__brand h3 {
+  color: #ffffff;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer__links h4,
+.footer__contact h4 {
+  color: #ffffff;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-base);
+}
+
+.footer__links ul li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+}
+
+.footer__bottom {
+  border-top: 1px solid #1e293b;
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  font-size: var(--font-size-sm);
+}

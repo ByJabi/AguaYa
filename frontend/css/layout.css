@@ -1,0 +1,92 @@
+/* ==========================================================================
+   LAYOUT Y ESTRUCTURA GENERAL - AguaYa
+   ¿Qué es?
+   El esqueleto que organiza los anchos, márgenes de sección y distribuciones
+   en columnas de la página.
+   
+   ¿De qué se encarga?
+   1. Centrar el contenido dentro de un ancho máximo (.container).
+   2. Dar espacio vertical consistente entre secciones (.section).
+   3. Organizar las tarjetas de servicios y pasos en cuadrículas (.grid).
+   
+   ¿Por qué se hace así?
+   Separa la estructura espacial del diseño de los componentes individuales,
+   haciendo que el sitio sea ordenado y predecible.
+   ========================================================================== */
+
+/* 
+   Contenedor principal (.container):
+   ¿De qué se encarga? Centra el contenido horizontalmente (margin: 0 auto) 
+   y le pone un tope de ancho (1140px) para que en monitores grandes la página 
+   no se estire de forma incómoda a la vista. El padding lateral evita que 
+   el texto toque los bordes de la pantalla.
+*/
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+/* 
+   Espaciado de secciones (.section):
+   ¿De qué se encarga? Proporciona un respiro visual vertical (arriba y abajo) 
+   a cada bloque de la landing (Servicios, Cómo funciona, etc.).
+*/
+.section {
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+/* 
+   Sección con fondo alternativo (.section--alt):
+   ¿De qué se encarga? Rompe la monotonía del fondo blanco aplicando un gris muy suave,
+   ayudando al usuario a distinguir visualmente cuándo termina un bloque y empieza otro.
+*/
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+/* 
+   Títulos y subtítulos de sección:
+   ¿De qué se encarga? Da jerarquía y consistencia visual a los encabezados
+   de "¿Cómo funciona?", "Servicios", etc.
+*/
+.section__title {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-main);
+}
+
+/* Modificador para cuando el título de sección deba alinearse a la izquierda */
+.section__title--left {
+  text-align: left;
+}
+
+.section__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* 
+   Sistema de cuadrícula (.grid):
+   ¿De qué se encarga? Usa CSS Grid moderno para ubicar las tarjetas de pasos 
+   y servicios una al lado de otra en columnas ordenadas de igual tamaño.
+*/
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+/* Cuadrícula de 3 columnas para pantallas de escritorio */
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}

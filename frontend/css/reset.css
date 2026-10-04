@@ -1,0 +1,79 @@
+/* ==========================================================================
+   RESET CSS - Normalización de estilos base
+   ¿Qué es?
+   Un conjunto de directivas iniciales para limpiar los estilos predeterminados
+   que cada navegador aplica por su cuenta.
+   
+   ¿De qué se encarga?
+   Elimina márgenes y rellenos arbitrarios, establece el modelo de caja correcto
+   y asegura que los elementos multimedia y enlaces se comporten de forma predecible.
+   
+   ¿Por qué se hace así?
+   Garantiza que la landing de AguaYa luzca idéntica y sin descuadres tanto en
+   Google Chrome, Safari, Firefox o Edge, como en cualquier navegador móvil.
+   ========================================================================== */
+
+/* 
+   Modelo de caja universal:
+   ¿De qué se encarga? 'box-sizing: border-box' asegura que el padding y los bordes 
+   se calculen DENTRO del ancho total del elemento, evitando que los botones o tarjetas 
+   se desborden o rompan la cuadrícula de la página.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+   Comportamiento general del documento:
+   ¿De qué se encarga? 
+   1. 'scroll-behavior: smooth' hace que al hacer clic en los enlaces de la barra 
+      (como #servicios o #conductores), la página se desplace suavemente en vez de saltar de golpe.
+   2. '-webkit-text-size-adjust: 100%' previene cambios bruscos de tamaño de letra en celulares 
+      al rotar la pantalla.
+*/
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 
+   Listas de navegación y pie de página:
+   ¿De qué se encarga? Elimina los puntos o números que los navegadores colocan
+   automáticamente a las etiquetas <ul> y <ol>.
+*/
+ul, ol {
+  list-style: none;
+}
+
+/* 
+   Enlaces e hipervínculos:
+   ¿De qué se encarga? Quita el subrayado azul predeterminado de los enlaces (<a>)
+   y hereda el color del texto para que no altere el diseño visual.
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+   Elementos multimedia (imágenes e íconos):
+   ¿De qué se encarga? 'max-width: 100%' impide que una imagen grande se salga 
+   de su contenedor o genere barras de desplazamiento horizontal indeseadas.
+*/
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 
+   Controles interactivos y formularios:
+   ¿De qué se encarga? Hace que botones, entradas de texto y desplegables hereden 
+   la misma tipografía definida en el cuerpo del sitio, evitando fuentes genéricas.
+*/
+button, input, textarea, select {
+  font: inherit;
+}

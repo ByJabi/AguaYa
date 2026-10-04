@@ -1,0 +1,81 @@
+/* ==========================================================================
+   VARIABLES GLOBALES (Design Tokens) - AguaYa
+   ¿Qué es?
+   Un archivo centralizado de variables nativas de CSS (:root).
+   
+   ¿De qué se encarga?
+   Define los valores estándar reutilizables (colores de identidad, fuentes, 
+   sombras, radios de borde y espaciados).
+   
+   ¿Por qué se hace así?
+   Garantiza coherencia visual. Si en el futuro se decide cambiar el tono de 
+   azul o la tipografía, solo se modifica aquí una sola vez y el cambio se 
+   refleja de inmediato en toda la aplicación sin tocar cada clase.
+   ========================================================================== */
+
+:root {
+  /* --- PALETA DE COLORES INSTITUCIONAL --- */
+  
+  /* Azul principal: Representa agua, confianza y pureza. Se usa en botones de acción y destacados */
+  --color-primary: #0077b6;
+  
+  /* Azul oscuro: Efecto hover al pasar el cursor sobre elementos interactivos */
+  --color-primary-hover: #023e8a;
+
+  /* Celeste brillante: Acentos visuales e insignias secundarias */
+  --color-accent: #00b4d8;
+  
+  /* Fondo suave del acento: Usado en pastillas/badges de información */
+  --color-accent-light: #caf0f8;
+
+  /* Verde WhatsApp: Canal principal de contacto y conversión en Aguachica */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1eb857;
+
+  /* Tonos neutros para fondos y textos legibles */
+  --color-text-main: #1f2937;       /* Gris carbón oscuro para lectura cómoda */
+  --color-text-muted: #6b7280;      /* Gris intermedio para subtítulos y descripciones */
+  --color-bg-light: #ffffff;        /* Blanco base de fondo */
+  --color-bg-alt: #f8fafc;          /* Gris muy tenue para alternar secciones visualmente */
+  --color-border: #e2e8f0;          /* Líneas divisorias y bordes de tarjetas */
+
+  /* --- TIPOGRAFÍA --- */
+  
+  /* Pila de fuentes del sistema: Carga ultra rápida sin depender de fuentes externas en zonas de baja señal */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Escala tipográfica armónica */
+  --font-size-sm: 0.875rem;   /* ~14px: Textos legales, fechas y badges */
+  --font-size-base: 1rem;     /* ~16px: Texto estándar de lectura */
+  --font-size-lg: 1.25rem;    /* ~20px: Subtítulos destacados */
+  --font-size-xl: 1.5rem;     /* ~24px: Títulos de tarjetas y módulos */
+  --font-size-2xl: 2rem;      /* ~32px: Títulos de secciones */
+  --font-size-3xl: 2.5rem;    /* ~40px: Titular principal del Hero */
+
+  /* --- ESPACIADOS Y MAQUETACIÓN --- */
+  
+  /* Escala de espaciado modular para márgenes (margin) y rellenos (padding) */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2.5rem;   /* 40px */
+  --spacing-2xl: 4rem;    /* 64px */
+
+  /* Ancho máximo de contenido para que no se estire de forma infinita en pantallas grandes */
+  --container-max-width: 1140px;
+
+  /* --- FORMAS, BORDES Y SOMBRAS --- */
+  
+  /* Redondeo de esquinas */
+  --border-radius-sm: 6px;       /* Tarjetas pequeñas y cajas de texto */
+  --border-radius-md: 10px;      /* Tarjetas de servicios y contenedores */
+  --border-radius-pill: 50px;    /* Botones y pastillas redondas */
+
+  /* Sombras para dar profundidad y relieve a los elementos interactivos */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Transición fluida para efectos al pasar el cursor (hover) */
+  --transition-normal: all 0.2s ease-in-out;
+}
