@@ -8,9 +8,9 @@
    2. Intercepta clics con data-wa-action para disparar la Factory de WhatsApp.
    ========================================================================== */
 
-import { NavbarComponent } from 'fronted/js/components/navbar.js';
-import { FooterComponent } from 'fronted/js/components/footer.js';
-import { WhatsAppFactory } from 'fronted/js/services/whatsapp.service.js';
+import { NavbarComponent } from '../components/navbar.js';
+import { FooterComponent } from '../components/footer.js';
+import { WhatsAppFactory } from '../services/whatsapp.service.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Renderizado de componentes reutilizables
