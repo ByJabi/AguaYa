@@ -40,31 +40,11 @@
        ¿De qué se encarga? Permite al usuario identificar la marca, navegar por las
        secciones clave mediante enlaces ancla (#) y tener acceso inmediato al pedido de agua.
        ========================================================================== -->
-  <header class="navbar" id="inicio">
-    <div class="container navbar__container">
-      
-      <!-- Logotipo de la marca con enlace para volver al inicio -->
-      <a href="#inicio" class="navbar__logo">
-        <span class="navbar__logo-icon">💧</span> AguaYa
-      </a>
-
-      <!-- Menú de navegación anclado a las distintas secciones de la misma página -->
-      <nav class="navbar__menu">
-        <a href="#como-funciona" class="navbar__link">Cómo funciona</a>
-        <a href="#servicios" class="navbar__link">Servicios</a>
-        <a href="#conductores" class="navbar__link">Conductores</a>
-        <a href="#cobertura" class="navbar__link">Cobertura</a>
-      </nav>
-
-      <!-- Botón de llamada a la acción (CTA) directo a WhatsApp con mensaje precargado -->
-      <button type="button" class="btn btn--primary navbar__cta" data-wa-action="request_service">
-        Pedir Agua Ahora
-      </button>
-
-    </div>
-  </header>
+    <!-- Contenedor donde se inyecta el Navbar dinámico -->
+    <div id="navbar-container"></div>
 
   <main>
+    
     <!-- ==========================================================================
          2. SECCIÓN HERO (Encabezado Principal)
          ¿Qué es? La primera pantalla visible al entrar a la web.
@@ -215,39 +195,9 @@
        ¿De qué se encarga? Proporcionar enlaces rápidos de navegación, datos de contacto
        directo y los créditos legales de la plataforma.
        ========================================================================== -->
-  <footer class="footer">
-    <div class="container footer__container">
-      
-      <!-- Identidad y resumen -->
-      <div class="footer__brand">
-        <h3>💧 AguaYa</h3>
-        <p>Conectando soluciones de agua potable en Aguachica, Cesar.</p>
-      </div>
-
-      <!-- Accesos rápidos secundarios -->
-      <div class="footer__links">
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#conductores">Conductores</a></li>
-        </ul>
-      </div>
-
-      <!-- Canales de contacto -->
-      <div class="footer__contact">
-        <h4>Contacto</h4>
-        <p>WhatsApp: +57 318 333 4914</p>
-        <p>Aguachica, Cesar - Colombia</p>
-      </div>
-
-    </div>
-    
-    <!-- Franja de derechos de autor -->
-    <div class="footer__bottom">
-      <p>&copy; 2026 AguaYa. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  <!-- Contenedor donde se inyecta el Footer dinámico -->
+  <div id="footer-container"></div>
   <script type="module" src="js/modules/home.js"></script>
+  <script type="module" src="./js/modules/home.js"></script>
 </body>
 </html>

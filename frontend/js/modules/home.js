@@ -1,15 +1,23 @@
 /* ==========================================================================
    HOME MODULE - AguaYa
    ¿Qué es?
-   Controlador de eventos e interacción de la landing page.
+   Controlador de inicialización y eventos de la landing page.
+   
    ¿De qué se encarga?
-   Intercepta las acciones de usuario y delega la apertura a la Factory.
+   1. Renderiza los componentes reutilizables (Navbar y Footer).
+   2. Intercepta clics con data-wa-action para disparar la Factory de WhatsApp.
    ========================================================================== */
 
+import { NavbarComponent } from '../components/navbar.js';
+import { FooterComponent } from '../components/footer.js';
 import { WhatsAppFactory } from '../services/whatsapp.service.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Escucha clics en cualquier botón configurado para WhatsApp
+  // 1. Renderizado de componentes reutilizables
+  NavbarComponent.render('#navbar-container');
+  FooterComponent.render('#footer-container');
+
+  // 2. Delegación de eventos para botones de WhatsApp
   document.body.addEventListener('click', (event) => {
     const trigger = event.target.closest('[data-wa-action]');
     
