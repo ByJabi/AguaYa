@@ -8,6 +8,6 @@
 
 export const APP_CONFIG = {
   // Número oficial de AguaYa para Aguachica (código país 57 + número)
-  WHATSAPP_PHONE: '3183334914',
+  WHATSAPP_PHONE: '573183334914',
   CITY: 'Aguachica, Cesar'
 };
